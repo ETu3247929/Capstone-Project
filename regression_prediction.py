@@ -101,8 +101,7 @@ def app():
     if regressor == 'Linear Regression':
         tip = model.predict(input_df)
         # Show the model metrics
-        st.subheader('Model metrics')
-        st.write(f'R^2 score: {model.score(X_test, y_test):.2f}')
+        st.subheader('Model metrics'
         st.write(f'Feature importances: {model.coef_}')
         st.write(f'MSE: {model.score(X_test, y_test):.2f}')
     else:
