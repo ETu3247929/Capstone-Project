@@ -52,7 +52,7 @@ def app():
    # Show the boxplot
     if st.checkbox('Show boxplot'):
         fig = plt.figure(figsize=(8, 6))
-        sns.boxplot(x='day', y='tip', data=tips_df)
+        sns.boxplot(x='total_bill', y='tip', data=tips_df)
         st.pyplot(fig)
         
    # Show Distribution of total bills
