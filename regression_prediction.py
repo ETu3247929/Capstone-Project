@@ -54,12 +54,20 @@ def app():
         sns.regplot(x='total_bill', y='tip', data=tips_df)
         st.pyplot(fig)
 
-    # Show the boxplot
+   # Show the boxplot
     if st.checkbox('Show boxplot'):
         fig = plt.figure(figsize=(8, 6))
         sns.boxplot(x='day', y='tip', data=tips_df)
         st.pyplot(fig)
-
+        
+   # Show Distribution of total bills
+    if st.checkbox("Show Distribution of total bills"):
+        fig = plt.figure(figsize=(8,6))
+        sns.histplot(data=tips_df, x='total_bill', kde='density')
+        plt.xlabel('Total Bill')
+        plt.title('Distribution of Total Bill Amounts')
+        st.pyplot(fig)
+        
     # PDA
     st.subheader('Predictive Data Analysis')
 
