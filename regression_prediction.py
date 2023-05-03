@@ -28,8 +28,8 @@ def app():
     st.subheader('Exploratory Data Analysis')
 
     # Show the original dataset
-    if st.checkbox('Show dataset'):
-        st.write(tips_df)
+    if st.checkbox('Show first few rows:'):
+        st.write(tips_df.head())
 
     # Show the summary statistics
     if st.checkbox('Show summary statistics'):
@@ -41,11 +41,6 @@ def app():
         sns.heatmap(tips_df.corr(), annot=True, cmap='coolwarm', linewidths=1)
         st.pyplot(fig)
 
-    # Show the scatterplot
-    if st.checkbox('Show scatterplot'):
-        fig = plt.figure(figsize=(8, 6))
-        sns.scatterplot(x='total_bill', y='tip', data=tips_df)
-        st.pyplot(fig)
 
 
     # Show the regression plot
@@ -114,7 +109,6 @@ def app():
         tip = rfa_model.predict(input_df)
         # Show the model metrics
         st.subheader('Model metrics')
-        st.write(f'R^2 score: {rfa_model.score(X_test, y_test):.2f}')
         st.write(f'Feature importances: {rfa_model.feature_importances_}')
         st.write(f'MSE: {rfa_model.score(X_test, y_test):.2f}')
 
