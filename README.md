@@ -1,2 +1,4 @@
-# Capstone-Project
-Capstone assignment for Software tech
+“Dining Data”: An EDA and Machine Learning Project on Restaurant Bills and Tips
+
+
+- Eh Ser Tin
