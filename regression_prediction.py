@@ -37,8 +37,9 @@ def app():
 
     # Show the correlation heatmap
     if st.checkbox('Show correlation heatmap'):
+        tips_df_no_day_time = tips_df.drop(['day', 'time'], axis=1)
         fig = plt.figure(figsize=(8, 6))
-        sns.heatmap(tips_df.corr(), annot=True, cmap='coolwarm', linewidths=1)
+        sns.heatmap(tips_df_no_day_time.corr(), annot=True, cmap='coolwarm', linewidths=1)
         st.pyplot(fig)
 
 
