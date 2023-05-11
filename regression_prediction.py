@@ -80,7 +80,7 @@ def app():
 
     # Create input dataframe
     input_df = pd.DataFrame({
-        'total_bill': [0],
+        'total_bill': [total_bill],
         'sex': [sex_encoded],
         'smoker': [smoker_encoded],
         'size': [size]
